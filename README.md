@@ -25,7 +25,7 @@ sudo ./ansible.sh
 By default, the script installs Ansible from the official PPA. If you prefer to use the Ubuntu repository version, set the `USE_PPA` environment variable to 0:
 
 ```bash
-sudo USE_PPA=0 ./ansible.sh
+sudo ./ansible.sh
 ```
 
 ## SSH Key Configuration
@@ -37,7 +37,7 @@ After installing Ansible, you'll need to configure SSH keys for connecting to re
 If you don't have SSH keys yet, generate them:
 
 ```bash
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "ubuntu@<private-ip-of-ansible-server>"
 ```
 
 ### Push SSH Keys to Servers
@@ -55,6 +55,7 @@ Note: You may need to modify the playbook to use your specific user and SSH key 
 This repository also includes playbooks for:
 
 - **Docker Installation**: `docker-files/docker-install.yml`
+- **Docker User**: `docker-files/docker-users.yml`
 - **Docker Login**: `docker-files/docker-login.yml`
 - **Vault Configuration**: `docker-files/vault.yml`
 - **Git Installation**: `jenkins-files/git-install.yml`
